@@ -1,0 +1,20 @@
+{
+    "name": "cruelvx/laravel-phpbb-bridge",
+    "description": "Authentication module for Laravel 5.8 and phpBB 3.3",
+    "keywords": ["phpbb", "phpbb3", "laravel", "laravel5"],
+    "license": "MIT",
+    "authors": [{
+        "name": "cruelvx",
+        "email": "cruelvx@gmail.com"
+    }],
+    "require": {
+        "php": ">=7.4",
+        "illuminate/support": "5.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Cruelvx\\LaravelPhpbbBridge\\": "src/LaravelPhpbbBridge"
+        }
+    },
+    "minimum-stability": "dev"
+}
