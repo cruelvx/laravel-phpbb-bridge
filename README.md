@@ -1,1 +1,1 @@
-Test packegist v0.3
+v1.0
