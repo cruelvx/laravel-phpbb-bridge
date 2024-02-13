@@ -29,12 +29,17 @@ class ApiController extends Controller
     {
         if (config('laravel-phpbb-bridge.client_auth') && Auth::client()->check()) {
             $result = [
+                'id' => Auth::client()->user()['id'],
                 'username' => Auth::client()->user()[config('laravel-phpbb-bridge.user_model.username_column')],
                 'email' => Auth::client()->user()[config('laravel-phpbb-bridge.user_model.email_column')]
             ];
         } elseif (!config('laravel-phpbb-bridge.client_auth') && Auth::check()) {
+            $userName = Auth::user()[config('laravel-phpbb-bridge.user_model.username_column')];
+            $userId = Auth::user()->id;
+            $userName = $userName ?? 'user_' . $userId;
             $result = [
-                'username' => Auth::user()[config('laravel-phpbb-bridge.user_model.username_column')],
+                'id' => $userId,
+                'username' => $userName,
                 'email' => Auth::user()[config('laravel-phpbb-bridge.user_model.email_column')]
             ];
         } else {

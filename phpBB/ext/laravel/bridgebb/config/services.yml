@@ -1,0 +1,8 @@
+services:
+  auth.provider.bridgebb:
+    class: laravel\bridgebb\auth\provider\bridgebb
+    arguments:
+      - '@dbal.conn'
+      - '@user'
+    tags:
+      - { name: auth.provider }
